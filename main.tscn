@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dktopav11k4jy"]
+
+[ext_resource type="Script" uid="uid://c827dtxqxsx4k" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://bcfe7nxwahijp" path="res://icon.svg" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://b55an884f4vkn" path="res://crosshair-110.png" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://d30tij26dlk8j" path="res://correcta.tscn" id="4_lquwl"]
+[ext_resource type="Texture2D" uid="uid://klq2nsj8lhc6" path="res://image.png" id="5_lquwl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uj7aj"]
+radius = 89.17
+
+[node name="Node2D" type="Node2D" unique_id=2003836793]
+script = ExtResource("1_1bvp3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1509957802]
+layer = -1
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=465729706]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control" unique_id=1896316615]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("5_lquwl")
+expand_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=177766690]
+zoom = Vector2(0.42, 0.42)
+editor_draw_limits = true
+
+[node name="CirculoJuego" type="Sprite2D" parent="." unique_id=397589311]
+self_modulate = Color(0.1678226, 0.3734647, 0.34010604, 1)
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(10, 10)
+texture = ExtResource("2_1bvp3")
+metadata/_edit_lock_ = true
+
+[node name="SpawnDeCorrectos" type="Node2D" parent="." unique_id=90505497]
+
+[node name="Correcta" parent="SpawnDeCorrectos" unique_id=2076238083 instance=ExtResource("4_lquwl")]
+unique_name_in_owner = true
+position = Vector2(556, 0)
+
+[node name="CursorJugador" type="Sprite2D" parent="." unique_id=84707051]
+position = Vector2(550, 0)
+texture = ExtResource("1_ig7tw")
+metadata/_edit_group_ = true
+
+[node name="Area" type="Area2D" parent="CursorJugador" unique_id=1039081027]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CursorJugador/Area" unique_id=1967438577]
+shape = SubResource("CircleShape2D_uj7aj")
