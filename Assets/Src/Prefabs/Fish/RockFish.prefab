@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4068499833098973195}
   - component: {fileID: 2405584259058735201}
   - component: {fileID: 8011971644723352007}
-  - component: {fileID: 4567316830680208101}
+  - component: {fileID: -2227424612965320292}
   m_Layer: 0
-  m_Name: GoldenFish
+  m_Name: RockFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 8f28d8d1995b69a44bcda01f37f90de7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 88736afa4455e104c803df43daa7aac4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,9 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f47e7410fe71ac5439e8fc33a463020d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishController
-  resistance: 3
+  resistance: 5
   _name: Golden Fish
---- !u!114 &4567316830680208101
+--- !u!114 &-2227424612965320292
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,4 +120,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d313e78de8b4c024fb90ff887bdbb300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishMovement
-  speed: 0.5
+  speed: 1

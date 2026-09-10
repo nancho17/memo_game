@@ -21,7 +21,6 @@ public class FishController : MonoBehaviour
         if(currentResistance <= 0)
         {
             GameManager.Instance.EndFishing();
-            Destroy(gameObject);
         }
     }
 }
