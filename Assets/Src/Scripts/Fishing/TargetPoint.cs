@@ -56,16 +56,16 @@ public class TargetPoint : MonoBehaviour
 
     void OnHit()  
     {
-
         Debug.Log("OK"); 
-        notifyText.text = "<color=green>¡Bien ahí!</color>"; 
+        notifyText.text = "<color=green>¡Bien ahí!</color>";
+        GameManager.Instance.SetDamage();
         Destroy(gameObject); 
     }
 
     void OnMiss() 
     { 
         Debug.Log("Falló");
-        notifyText.text = "<color=red>¡Intenta de nuevo!</color>"; 
+        notifyText.text = "<color=red>¡Fallaste!</color>"; 
     }
 
     private void EnableAction(InputActionReference actionRef)

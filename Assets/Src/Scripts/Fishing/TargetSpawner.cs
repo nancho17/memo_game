@@ -5,8 +5,6 @@ public class TargetSpawner : MonoBehaviour
     [SerializeField] private GameObject targetPrefab;
     [SerializeField] private Transform container;
 
-
-
     private GameObject currentTarget;
 
     private void Start()
@@ -21,6 +19,16 @@ public class TargetSpawner : MonoBehaviour
             Destroy(currentTarget);
         }
         currentTarget = SpawnTarget(Random.Range(0f, 360f));
+    }
+
+    public void Update()
+    {
+        if(!GameManager.Instance.IsCatching) return;
+
+        if(currentTarget == null)
+        {
+            SpawnNewTarget();
+        }
     }
 
     public GameObject SpawnTarget(float angleDegrees)
